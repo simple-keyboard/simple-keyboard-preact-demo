@@ -48,12 +48,9 @@ export default class App extends Component {
         layoutName: layoutName === "default" ? "shift" : "default"
       },
       () => {
-        console.log(this.state.layoutName);
-        /**
-         * Generally in React, calling this.setState triggers
-         * a render. For some reason, in Preact this has to be done manually
-         */
-        this.renderKeyboard();
+        this.keyboard.setOptions({
+          layoutName: this.state.layoutName
+        });
       }
     );
   };
