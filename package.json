@@ -1,7 +1,8 @@
 {
   "private": true,
-  "name": "test-preact",
-  "version": "0.0.0",
+  "name": "simple-keyboard-preact-demo",
+  "description": "Preact Virtual Keyboard",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
