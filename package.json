@@ -29,7 +29,7 @@
   "dependencies": {
     "preact": "8.4.2",
     "preact-compat": "^3.17.0",
-    "simple-keyboard": "2.15.1"
+    "simple-keyboard": "latest"
   },
   "jest": {
     "verbose": true,
