@@ -13,15 +13,11 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.renderKeyboard();
-  }
-
-  renderKeyboard() {
-    return (this.keyboard = new Keyboard({
+    this.keyboard = new Keyboard({
       layoutName: this.state.layoutName,
       onChange: input => this.onChange(input),
       onKeyPress: button => this.onKeyPress(button)
-    }));
+    })
   }
 
   onChange = input => {
