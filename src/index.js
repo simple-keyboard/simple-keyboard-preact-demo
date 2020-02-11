@@ -21,9 +21,7 @@ export default class App extends Component {
   }
 
   onChange = input => {
-    this.setState({
-      input: input
-    });
+    this.setState({ input });
     console.log("Input changed", input);
   };
 
