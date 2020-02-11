@@ -17,7 +17,7 @@ export default class App extends Component {
       layoutName: this.state.layoutName,
       onChange: input => this.onChange(input),
       onKeyPress: button => this.onKeyPress(button)
-    })
+    });
   }
 
   onChange = input => {
@@ -37,39 +37,26 @@ export default class App extends Component {
   };
 
   handleShift = () => {
-    let layoutName = this.state.layoutName;
+    const layoutName =
+      this.state.layoutName === "default" ? "shift" : "default";
 
-    this.setState(
-      {
-        layoutName: layoutName === "default" ? "shift" : "default"
-      },
-      () => {
-        this.keyboard.setOptions({
-          layoutName: this.state.layoutName
-        });
-      }
-    );
+    this.setState({ layoutName });
+    this.keyboard.setOptions({ layoutName });
   };
 
   onChangeInput = event => {
-    let input = event.target.value;
-    this.setState(
-      {
-        input: input
-      },
-      () => {
-        this.keyboard.setInput(input);
-      }
-    );
+    const input = event.target.value;
+    this.setState({ input });
+    this.keyboard.setInput(input);
   };
 
-  render(props, { results = [] }) {
+  render() {
     return (
       <div>
         <input
           value={this.state.input}
           placeholder={"Tap on the virtual keyboard to start"}
-          onChange={e => this.onChangeInput(e)}
+          onInput={this.onChangeInput}
         />
         <div className={"simple-keyboard"} />
       </div>
